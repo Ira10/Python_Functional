@@ -1,0 +1,19 @@
+2. Write a program that asks the user to enter his or her name. The program should
+respond with a message that says hello to the user, using his or her name. /\    20/02/24
+
+name = (input("Please put your name here."))
+print("Hello " + name)
+
+3: Area of a Room
+Write a program that asks the user to enter the width and length of a room. Once
+the values have been read, your program should compute and display the area of the
+room. The length and the width will be entered as floating point numbers. Include
+units in your prompt and output message; either feet or meters, depending on which
+unit you are more comfortable working with.  /\    20/02/24
+
+width = int(input("Enter the width of the room"))
+len = int(input("Enter the length of the room"))
+
+area = width * len
+
+print("The area of the room is %d" %area)
