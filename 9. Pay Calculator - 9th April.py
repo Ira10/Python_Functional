@@ -19,11 +19,16 @@ if hour < 40:
 elif hour > 40:
     reg_pay = 40 * pay
     overtime_hour = hour - 40
-    overtime_pay = overtime_hour * pay * 150%
+    overtime_pay = overtime_hour * pay * 150%  ## can't write 150 % like this
     total_pay = reg_pay + overtime_pay
     print("reg_pay \n")
     print("overtime_pay \n")
     print("total_pay \n")
+
+ Cell In[3], line 10
+    overtime_pay = overtime_hour * pay * 150%
+                                             ^
+SyntaxError: invalid syntax
 
 
 # In[5]:
