@@ -1,32 +1,33 @@
-def group_numbers_into_ranges(numbers, range_size=10):
-    # Create a dictionary to hold the counts for each range
-    ranges = {}
+def group_numbers_into_ranges(numbers, range_size):
+    # Find the minimum and maximum of the numbers
+    min_num = min(numbers)
+    max_num = max(numbers)
     
-    # Determine the minimum and maximum values from the list
-    min_value = min(numbers)
-    max_value = max(numbers)
+    # Initialize a dictionary to store the range and counts
+    range_counts = {}
     
-    # Create ranges and initialize counts to zero
-    for start in range(min_value, max_value + 1, range_size):
+    # Create ranges from min_num to max_num
+    for start in range(min_num, max_num + 1, range_size):
         end = start + range_size - 1
-        ranges[f"{start}-{end}"] = 0
+        range_key = f"{start}-{end}"
+        range_counts[range_key] = 0
     
-    # Count the numbers in each range
-    for number in numbers:
-        # Find the appropriate range for the number
-        range_start = (number // range_size) * range_size
-        range_end = range_start + range_size - 1
-        
-        # Update the count for the corresponding range
-        ranges[f"{range_start}-{range_end}"] += 1
+    # Count how many numbers fall into each range
+    for num in numbers:
+        for start in range(min_num, max_num + 1, range_size):
+            end = start + range_size - 1
+            if start <= num <= end:
+                range_key = f"{start}-{end}"
+                range_counts[range_key] += 1
+                break
     
-    return ranges
+    return range_counts
 
 # Example usage
-if __name__ == "__main__":
-    numbers = [1, 5, 12, 15, 22, 25, 30, 35, 40, 45, 50]
-    result = group_numbers_into_ranges(numbers)
-    
-    # Print the results
-    for r_range, count in result.items():
-        print(f"Range {r_range}: {count} elements")
+numbers = [5, 8, 15, 23, 17, 9, 35, 12, 44, 25]
+range_size = 10
+result = group_numbers_into_ranges(numbers, range_size)
+
+# Display the result
+for r, count in result.items():
+    print(f"Range {r}: {count} numbers")
