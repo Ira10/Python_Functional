@@ -7,4 +7,4 @@ for i in Sen:
     else:
         result += i
 
-print(result)
+print(result)  # handled team communication and operations for 60+ people and reduced 1 hour of work by creating weekly process reports, dashboards and ad hoc analysis using advanced excel functions(vlookup, pivot tables) and powerpoint.
