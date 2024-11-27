@@ -28,3 +28,7 @@ for i in L:
 # 9.0
 # 10.0
 # Ooops, wrong type
+
+print(9/2)  ### 4.5
+print(9//2) ## 4
+print(9%2) ## 1
