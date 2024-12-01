@@ -62,3 +62,30 @@ range_start = int(input("Enter the starting "))
 range_end = int(input("Enter the ending "))
 
 print(range_check(n, range_start, range_end))
+
+
+##############################################
+
+# Define a function named 'test_range' that checks if a number 'n' is within the range 3 to 8 (inclusive)
+def test_range(n):
+    # Check if 'n' is within the range from 3 to 8 (inclusive) using the 'in range()' statement
+    if n in range(range_start, range_end):
+        # If 'n' is within the range, print that 'n' is within the given range
+        print("%s is in the range" % str(n))
+    else:
+        # If 'n' is outside the range, print that the number is outside the given range
+        print("The number is outside the given range.")
+
+# Call the 'test_range' function with the argument 5
+test_range(n)
+
+
+
+# 5.5
+# Enter the n 5
+# Enter the starting 11
+# Enter the ending 17
+# n is not present
+# None
+# The number is outside the given range.
+
