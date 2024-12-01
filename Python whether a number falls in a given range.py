@@ -89,3 +89,24 @@ test_range(n)
 # None
 # The number is outside the given range.
 
+
+# Define a function named 'test_range' that checks if a number 'n' is within a specified range.
+# The range is determined by 'start_num' and 'end_num' (with 'end_num' having a default value of 0)
+def test_range(n, start_num, end_num=0):
+    # Check if 'end_num' is greater than or equal to 'start_num'
+    # If true, use 'start_num <= n <= end_num' to determine if 'n' is within the range
+    # If false, swap 'end_num' and 'start_num' and check 'end_num <= n <= start_num'
+    return start_num <= n <= end_num if end_num >= start_num else False ### else end_num <= n <= start_num
+
+# Print the result of checking if 5 is within the range from 2 to 7 (inclusive)
+print(test_range(5, 2, 7))  # True
+
+# Print the result of checking if 5 is within the default range from 7 to 0 (inclusive)
+print(test_range(5, 7))  # True  ## False
+
+# Print the result of checking if 1 is within the range from 3 to 6 (inclusive)
+print(test_range(1, 3, 6)) ## False
+
+# Print the result of checking if 6 is within the range from 5 to the default value 0 (inclusive)
+print(test_range(6, 5))  # False
+
